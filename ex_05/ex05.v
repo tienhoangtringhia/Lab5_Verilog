@@ -14,8 +14,8 @@ module ex05 (m, q, p);
 	genvar j;
 
 	generate
-	for(i=0;i<4;i=i+1) 
-	begin
+	for(i = 0; i < 4; i = i + 1) 
+	begin 
 		assign c_in[i][0] = 1'b0;
 		for(j = 0; j < 4; j = j + 1)
 		begin

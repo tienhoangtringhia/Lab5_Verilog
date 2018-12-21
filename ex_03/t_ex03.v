@@ -17,24 +17,22 @@ module t_ex03;
 	ex03 ex03_01(.clk(t_clk), .rst_n(t_rst_n), .ena(t_ena), .trigger(t_trigger));
 
 	initial begin
-		#0   t_rst_n = 0;
-			 t_ena = 0;
-		
-		#20  t_rst_n = 1;
-			 t_ena = 0;
-
-		#20  t_ena = 1; 
-		#10  t_ena = 0;
-		
-		#20  t_ena = 1; 
-		#40  t_ena = 0;
-		
-		#20  t_ena = 1; 
-		#60  t_ena = 0;
-		
-		#20  t_ena = 1; 
-		#80  t_ena = 0;
-		
+		#0  t_rst_n = 0;
+			t_ena = 0;
+		#20 t_rst_n = 1;
+			t_ena = 0;
+		#20 t_ena = 1; 
+		#20 t_ena = 0;	
+		#20 t_ena = 1; 
+		#40 t_ena = 0;
+		#20 t_ena = 1; 
+		#60 t_ena = 0;
+		#20 t_ena = 1;
+		#20  t_rst_n = 0;
+			t_ena = 1;
+		#40 t_rst_n = 1;
+			t_ena = 1;		
+		#80 t_ena = 0;
 		#20 $finish;
 	end
 

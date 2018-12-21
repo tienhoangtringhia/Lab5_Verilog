@@ -25,7 +25,6 @@ module t_ex02;
 
 	initial begin
 		# 10 t_data_in = {3'b000,5'b00000};
-		
 		# 10 t_data_in = {3'b111,5'b10101};
 		# 10 t_data_in = {3'b000,5'b01010};
 		# 10 t_data_in = {3'b000,5'b10101};
@@ -42,7 +41,6 @@ module t_ex02;
 		# 10 t_data_in = {3'b110,5'b01010};
 		# 10 t_data_in = {3'b110,5'b10101};
 		# 10 t_data_in = {3'b111,5'b01010};
-
 		# 10 t_data_in = {3'b111,5'b10011};
 		# 10 t_data_in = {3'b000,5'b01100};
 		# 10 t_data_in = {3'b000,5'b10011};

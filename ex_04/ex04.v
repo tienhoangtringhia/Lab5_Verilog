@@ -25,7 +25,7 @@ module ex04 (a, b, cin, s, cout);
 endmodule
 
 
-module f_adder(a,b,c_in,s,c_out);
+module f_adder(a, b, c_in, s, c_out);
 
 	input a;
 	input b;
