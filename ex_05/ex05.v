@@ -1,7 +1,7 @@
 module ex05 (m, q, p);
 
-	input [3:0] a;
-	input [3:0] b;
+	input [3:0] m;
+	input [3:0] q;
 
 	output [7:0] p;
 
@@ -19,7 +19,7 @@ module ex05 (m, q, p);
 		assign c_in[i][0] = 1'b0;
 		for(j = 0; j < 4; j = j + 1)
 		begin
-			m_adder m_adder(.a(a[i]), .b(b[j]), .m_in(m_in[i][j+1]), .c_in(c_in[i][j]), .m_out(m_in[i+1][j]), .c_out(c_in[i][j+1]));
+			m_adder m_adder(.a(m[i]), .b(q[j]), .m_in(m_in[i][j+1]), .c_in(c_in[i][j]), .m_out(m_in[i+1][j]), .c_out(c_in[i][j+1]));
 		end
 	
 		assign m_in[i+1][4] = c_in[i][4];

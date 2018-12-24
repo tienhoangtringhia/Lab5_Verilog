@@ -6,7 +6,7 @@
 
 	wire [7:0] p;
 
-	ex05 ex05_01(.a(a), .b(b), .p(p));
+	ex05 ex05_01(.m(a), .q(b), .p(p));
 
 	initial begin
 		#0    a = 0;
@@ -39,7 +39,11 @@
 			  b = 4'ha;
 		#700  a = 4'hf;
 			  b = 4'hf;
-		#800 $finish;    
+    #750 a = 4'h0;
+         b = 4'hf;
+    #800 a = 4'hd;
+         b = 4'hc;
+		#850 $finish;    
 	end
 
 	initial begin

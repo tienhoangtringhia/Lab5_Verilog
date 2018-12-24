@@ -40,7 +40,11 @@ module t_ex04;
 			 b = 6;
 		#550 a = 8;
 			 b = 8;
-		#600  $finish;    
+		#600 a = 0;
+         b = 12;
+    #650 a = 13;
+         b = 9;
+    #700  $finish;    
 	end
 
 	initial begin

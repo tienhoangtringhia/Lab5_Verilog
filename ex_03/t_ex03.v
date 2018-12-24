@@ -18,22 +18,28 @@ module t_ex03;
 
 	initial begin
 		#0  t_rst_n = 0;
-			t_ena = 0;
+			  t_ena = 0;
 		#20 t_rst_n = 1;
-			t_ena = 0;
+			  t_ena = 0;
+    #20 t_ena = 1;
+    #160 t_ena = 0;
+    #20 t_ena = 1;
+    #140 t_ena = 0;
+    #20 t_ena = 1;
+    #120 t_ena = 0;
 		#20 t_ena = 1; 
-		#20 t_ena = 0;	
+		#100 t_ena = 0;	
+		#20 t_ena = 1;
+    #80 t_ena = 0;
+    #20 t_ena = 1; 
+		#60 t_ena = 0;
 		#20 t_ena = 1; 
 		#40 t_ena = 0;
-		#20 t_ena = 1; 
-		#60 t_ena = 0;
 		#20 t_ena = 1;
-		#20  t_rst_n = 0;
-			t_ena = 1;
-		#40 t_rst_n = 1;
-			t_ena = 1;		
-		#80 t_ena = 0;
-		#20 $finish;
+		#20 t_ena = 0;
+		#20	t_ena = 1;		
+		#20 t_ena = 0;
+		#40 $finish;
 	end
 
 	initial begin

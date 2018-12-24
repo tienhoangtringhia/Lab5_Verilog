@@ -1,4 +1,4 @@
-module ex02 (s, u, v, w, x, y, led7_out);
+module ex02 (s, u, v, w, x, y, clk, led7_out);
 
 	parameter MUX_WIDTH = 3;
 	parameter DATA_WIDTH=3;
@@ -9,6 +9,7 @@ module ex02 (s, u, v, w, x, y, led7_out);
 	input [DATA_WIDTH-1:0] w;
 	input [DATA_WIDTH-1:0] x;
 	input [DATA_WIDTH-1:0] y;
+  input clk;
 
 	output [6:0] led7_out;
 
@@ -18,7 +19,7 @@ module ex02 (s, u, v, w, x, y, led7_out);
 	mux_5 #(.DATA_WIDTH(3)) 
 		mux_5_01 (.s(s), .u(u), .v(v), .w(w), .x(x), .y(y), .m(m));
 
-	signal signal (.clk(clk), .d(m), .qa(led7_in);
+	signal signal (.clk(clk), .d(m), .qa(led7_in));
 
 	led7_segment_decoder led7_segment_decoder (.in(led7_in), .out(led7_out));
 
@@ -29,7 +30,9 @@ module signal (clk, d, qa);
 
 	input clk;
 	input [2:0] d;
-	input [2:0] qa;
+	
+  output [2:0] qa;
+  
 	
 	reg [2:0] qa;
 	

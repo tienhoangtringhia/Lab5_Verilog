@@ -1,4 +1,4 @@
-module ex07 (clk, rst_n, w, b);
+module ex07 (clk, rst_n, w, out);
 
 	input clk;
 	input rst_n;
@@ -51,43 +51,6 @@ module ex07 (clk, rst_n, w, b);
 			end
 			default: begin
 				next_state = ST_A;
-			end
-		endcase
-	end
-
-	reg [7:0] STATE;
-
-	always @(*) begin
-		case(state)
-			ST_A: begin
-				STATE = "A";
-			end
-			ST_B: begin
-				STATE = "B";
-			end
-			ST_C: begin
-				STATE = "C";
-			end
-			ST_D: begin
-				STATE = "D";
-			end
-			ST_E: begin
-				STATE = "E";
-			end
-			ST_F: begin
-				STATE = "F";
-			end
-			ST_G: begin
-				STATE = "G";
-			end
-			ST_H: begin
-				STATE = "H";
-			end
-			ST_I: begin
-				STATE = "I";
-			end
-			default: begin
-				STATE = "X";
 			end
 		endcase
 	end

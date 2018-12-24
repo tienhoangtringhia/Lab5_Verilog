@@ -51,26 +51,6 @@ module ex06 (clk, rst_n, w, out);
 
 	always @(*) begin
 		case (state)
-			ST_A: begin
-				STATE = "A";
-			end
-			ST_B: begin
-				STATE = "B";
-			end
-			ST_C: begin
-				STATE = "C";
-			end
-			ST_F: begin
-				STATE = "F";
-			end
-			default: begin
-				STATE = "X";
-			end
-		endcase
-	end
-
-	always @(*) begin
-		case (state)
 			ST_C, ST_F: begin
 				out =  1'b1;
 			end
