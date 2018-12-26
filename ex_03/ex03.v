@@ -11,18 +11,17 @@ module ex03 (ena, clk, rst_n, trigger);
 
 	assign w_ena[0] = ena;
 
-	genvar i;
-
-	generate
-		for(i = 0; i < 4; i = i + 1) 
-		begin
-			d_ff d_ff(.clk(clk), .rst_n(rst_n), .d(w_ena[i]), .q(w_q[i]) );
-			if(i+1 < 4) begin
-				assign w_ena[i+1] = w_ena[i] && w_q[i];
-			end
-		end
-	endgenerate
-
+	d_ff d_ff_01(.clk(clk), .rst_n(rst_n), .d(w_ena[0]), .q(w_q[0]) );
+	assign w_ena[1] = w_ena[0] && w_q[0];
+	
+	d_ff d_ff_02(.clk(clk), .rst_n(rst_n), .d(w_ena[1]), .q(w_q[1]) );
+	assign w_ena[2] = w_ena[1] && w_q[1];
+	
+	d_ff d_ff_03(.clk(clk), .rst_n(rst_n), .d(w_ena[2]), .q(w_q[2]) );
+	assign w_ena[3] = w_ena[2] && w_q[2];
+	
+	d_ff d_ff_04(.clk(clk), .rst_n(rst_n), .d(w_ena[3]), .q(w_q[3]) );
+	
 	assign trigger = w_q[3];
 
 endmodule

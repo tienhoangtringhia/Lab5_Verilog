@@ -67,7 +67,7 @@ module ex01_c(s, u, v, w, x, y, m);
 	parameter MUX_WIDTH = 3;
 	parameter DATA_WIDTH = 3;
 
-	input  [MUX_WIDTH-1 :0] s;
+	input  [MUX_WIDTH-1:0] s;
 
 	input  [DATA_WIDTH-1:0] u;
 	input  [DATA_WIDTH-1:0] v;

@@ -8,18 +8,18 @@ module t_ex02;
 	wire [2:0] w; 
 	wire [2:0] x; 
 	wire [2:0] y; 
-
-	reg  [7:0] t_data_in;
-  reg t_clk;
-
 	wire [6:0] led; 
+	
+	reg [2:0] t_s;
+	reg [2:0] t_data;
+	reg t_clk;
 
-	assign s = t_data_in[7:5]; 
-	assign u = t_data_in[2:0]; 
-	assign v = t_data_in[3:1]; 
-	assign w = t_data_in[4:2]; 
-	assign x = t_data_in[5:3]; 
-	assign y = t_data_in[6:4]; 
+	assign s = t_s; 
+	assign u = t_data; 
+	assign v = t_data; 
+	assign w = t_data; 
+	assign x = t_data; 
+	assign y = t_data; 
   
   always begin
         #0 t_clk = 0;
@@ -30,41 +30,47 @@ module t_ex02;
 	ex02 ex02 (.s(s), .u(u), .v(v), .w(w), .x(x), .y(y), .clk(t_clk), .led7_out(led));
 
 	initial begin
-		# 0  t_data_in = {3'b000,5'b00000};
-		# 20 t_data_in = {3'b111,5'b10101};
-		# 20 t_data_in = {3'b000,5'b01010};
-		# 20 t_data_in = {3'b000,5'b10101};
-		# 20 t_data_in = {3'b001,5'b01010};
-		# 20 t_data_in = {3'b001,5'b10101};
-		# 20 t_data_in = {3'b010,5'b01010};
-		# 20 t_data_in = {3'b010,5'b10101};
-		# 20 t_data_in = {3'b011,5'b01010};
-		# 20 t_data_in = {3'b011,5'b10101};
-		# 20 t_data_in = {3'b100,5'b01010};
-		# 20 t_data_in = {3'b100,5'b10101};
-		# 20 t_data_in = {3'b101,5'b01010};
-		# 20 t_data_in = {3'b101,5'b10101};
-		# 20 t_data_in = {3'b110,5'b01010};
-		# 20 t_data_in = {3'b110,5'b10101};
-		# 20 t_data_in = {3'b111,5'b01010};
-		# 20 t_data_in = {3'b111,5'b10011};
-		# 20 t_data_in = {3'b000,5'b01100};
-		# 20 t_data_in = {3'b000,5'b10011};
-		# 20 t_data_in = {3'b001,5'b01100};
-		# 20 t_data_in = {3'b001,5'b10011};
-		# 20 t_data_in = {3'b010,5'b01100};
-		# 20 t_data_in = {3'b010,5'b10011};
-		# 20 t_data_in = {3'b011,5'b01100};
-		# 20 t_data_in = {3'b011,5'b10011};
-		# 20 t_data_in = {3'b100,5'b01100};
-		# 20 t_data_in = {3'b100,5'b10011};
-		# 20 t_data_in = {3'b101,5'b01100};
-		# 20 t_data_in = {3'b101,5'b10011};
-		# 20 t_data_in = {3'b110,5'b01100};
-		# 20 t_data_in = {3'b110,5'b10011};
-		# 20 t_data_in = {3'b111,5'b01100};
-
-    # 40 $finish;
+		# 10 t_s = 3'b000;
+			 t_data = 3'b000;
+		# 10 t_data = 3'b001;
+		# 10 t_data = 3'b010;
+		
+		# 10 t_s = 3'b001;
+			 t_data = 3'b011;
+		# 10 t_data = 3'b100;
+		# 10 t_data = 3'b101;
+		
+		# 10 t_s = 3'b010;
+			 t_data = 3'b110;
+		# 10 t_data = 3'b111;
+		# 10 t_data = 3'b000;
+		
+		# 10 t_s = 3'b011;
+			 t_data = 3'b001;
+		# 10 t_data = 3'b010;
+		# 10 t_data = 3'b011;
+		
+		# 10 t_s = 3'b100;
+			 t_data = 3'b100;
+		# 10 t_data = 3'b101;
+		# 10 t_data = 3'b110;
+		
+		# 10 t_s = 3'b101;
+			 t_data = 3'b111;
+		# 10 t_data = 3'b000;
+		# 10 t_data = 3'b001;
+		
+		# 10 t_s = 3'b110;
+			 t_data = 3'b010;
+		# 10 t_data = 3'b011;
+		# 10 t_data = 3'b100;
+		
+		# 10 t_s = 3'b111;
+			 t_data = 3'b101;
+		# 10 t_data = 3'b110;
+		# 10 t_data = 3'b111;
+		
+		# 20 $finish;
 	end
 
 	initial begin
